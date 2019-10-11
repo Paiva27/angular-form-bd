@@ -1,5 +1,5 @@
 import { Injectable, ViewChild } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +11,13 @@ export class AreaService {
 
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
-    nome: new FormControl('',Validators.required)
+    nome: new FormControl('', Validators.required)
   });
 
-  initializeFormGroup(){
+  initializeFormGroup() {
     this.form.setValue({
-    $key1: null,
-    nome1: '',
+      $key1: null,
+      nome1: '',
     });
   }
 }

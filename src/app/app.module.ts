@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterialModule} from './material/material.module';
+import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {ChartsModule} from 'ng2-charts';
+import { ChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -30,7 +30,7 @@ import { QuestaoComponent } from './usuarios/questao/questao.component';
     CursoComponent,
     DepartamentoComponent,
     QuestaoComponent,
-    ],
+  ],
   imports: [
     BrowserModule,
     MaterialModule,
@@ -41,7 +41,7 @@ import { QuestaoComponent } from './usuarios/questao/questao.component';
     FlexLayoutModule,
     ChartsModule,
     HttpClientModule,
-    
+
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

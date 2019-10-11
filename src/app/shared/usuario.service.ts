@@ -1,5 +1,5 @@
-import { Injectable, ViewChild } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { Injectable } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +10,13 @@ export class UsuarioService {
 
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
-    nome: new FormControl('',Validators.required),
-    sobrenome: new FormControl('',Validators.required),
+    nome: new FormControl('', Validators.required),
+    sobrenome: new FormControl('', Validators.required),
     gender: new FormControl('1'),
-    celular: new FormControl('',[Validators.required, Validators.minLength(12)]),
-    telefone: new FormControl('',Validators.minLength(11)),
+    celular: new FormControl('', [Validators.required, Validators.minLength(12)]),
+    telefone: new FormControl('', Validators.minLength(11)),
     cidade: new FormControl(''),
-    estado: new FormControl('',[Validators.minLength(2),Validators.maxLength(2)]),
+    estado: new FormControl('', [Validators.minLength(2), Validators.maxLength(2)]),
     bairro: new FormControl(''),
     logradouro: new FormControl(''),
     complemento: new FormControl(''),
@@ -24,21 +24,21 @@ export class UsuarioService {
     department: new FormControl(0),
     hireDate: new FormControl(''),
     isPermanent: new FormControl('false'),
-    email: new FormControl('',[Validators.required,Validators.email]),
-    senha: new FormControl('',Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    senha: new FormControl('', Validators.required),
 
   });
-  initializeFormGroup(){
+  initializeFormGroup() {
     this.form.setValue({
-    $key: null,
-    fullName: '',
-    email: '',
-    mobile: '',
-    city: '',
-    gender: '1',
-    department: 0,
-    hireDate:'',
-    isPermanent:false
+      $key: null,
+      fullName: '',
+      email: '',
+      mobile: '',
+      city: '',
+      gender: '1',
+      department: 0,
+      hireDate: '',
+      isPermanent: false
     });
   }
 }

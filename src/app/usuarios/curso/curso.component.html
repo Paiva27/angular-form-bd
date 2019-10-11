@@ -1,34 +1,42 @@
 <mat-grid-list cols="3" rowHeight="700px">
-        <form [formGroup]="service.form" class="normal-form">
-            <mat-grid-list cols="3" rowHeight="300px">
-        
-                 <mat-grid-tile>
-                   <div class="controles-container">
-        
-                        <input type="hidden" formControlName="$key">
-                        <mat-form-field>
-                            <input formControlName="nome" matInput placeholder="Nome*">
-                            <mat-error>Esse campo é obrigatório</mat-error>
-                        </mat-form-field>
-                        <mat-form-field>
-                            <input formControlName="codigo" matInput placeholder="Codigo*">
-                            <mat-error>Esse campo é obrigatório</mat-error>
-                        </mat-form-field>
-                        <mat-form-field>
-                            <input formControlName="departamento_id" matInput placeholder="ID do departamento*">
-                            <mat-error>Esse campo é obrigatório</mat-error>
-                        </mat-form-field>               
-                        <mat-form-field>
-                            <input formControlName="area_id" matInput placeholder="ID da área*">
-                            <mat-error>Esse campo é obrigatório</mat-error>
-                        </mat-form-field>  
-                        
-                        <div class="button-row">
-                                <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Cadastrar</button>
-                            </div>
+    <form [formGroup]="service.form" class="normal-form">
+        <mat-grid-list cols="3" rowHeight="300px">
+
+            <mat-grid-tile>
+                <div class="controles-container">
+
+                    <input type="hidden" formControlName="$key">
+                    <mat-form-field>
+                        <input formControlName="nome" matInput placeholder="Nome*">
+                        <mat-error>Esse campo é obrigatório</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="codigo" matInput placeholder="Codigo*">
+                        <mat-error>Esse campo é obrigatório</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select formControlName="departamento_id" placeholder="Departamento">
+                            <ng-container *ngFor="let departamento of departamentos">
+                                <mat-option value="{{departamento.id}}">{{departamento.value}}</mat-option>
+                            </ng-container>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-select formControlName="area_id" placeholder="Area">
+                            <ng-container *ngFor="let area of areas">
+                                <mat-option value="{{area.id}}">{{area.value}}</mat-option>
+                            </ng-container>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                    <div class="button-row">
+                        <button mat-raised-button color="primary" type="submit"
+                            [disabled]="service.form.invalid">Cadastrar</button>
                     </div>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </form>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
 </mat-grid-list>
-    

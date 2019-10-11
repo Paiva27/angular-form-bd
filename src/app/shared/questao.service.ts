@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class QuestaoService {
 
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
-    pergunta: new FormControl('',Validators.required),
+    pergunta: new FormControl(''),
     opcao_a: new FormControl(''),
     opcao_b: new FormControl(''),
     opcao_c: new FormControl(''),
@@ -23,7 +23,7 @@ export class QuestaoService {
     professor_id: new FormControl(''),
   });
 
-  initializeFormGroup(){
+  initializeFormGroup() {
     this.form.setValue({
       $key: null,
       pergunta: '',
