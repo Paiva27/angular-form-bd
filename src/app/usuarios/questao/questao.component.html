@@ -1,0 +1,67 @@
+<mat-grid-list cols="3" rowHeight="700px">
+        <form [formGroup]="service.form" class="normal-form">
+            <mat-grid-list cols="3" rowHeight="500px">
+        
+                 <mat-grid-tile>
+                   <div class="controles-container">
+        
+                        <input type="hidden" formControlName="$key">
+                        
+                        <mat-form-field>
+                            <textarea formControlName="pergunta" matInput placeholder="Pergunta"></textarea>
+                        </mat-form-field>
+
+                        
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <div class="controles-container">
+                                <mat-form-field>
+                                        <input formControlName="opcao_a" matInput placeholder="Opção A">
+                                    </mat-form-field>
+                                <mat-form-field>
+                                        <input formControlName="opcao_b" matInput placeholder="Opção B">
+                                </mat-form-field>
+                                <mat-form-field>
+                                        <input formControlName="opcao_c" matInput placeholder="Opção C">
+                                </mat-form-field>
+                                <mat-form-field>
+                                         <input formControlName="opcao_d" matInput placeholder="Opção D">
+                                </mat-form-field>
+                                <mat-form-field>
+                                        <input formControlName="opcao_e" matInput placeholder="Opção E">
+                               </mat-form-field>
+                                                            
+                             
+                         </div>
+                     </mat-grid-tile>
+                     <mat-grid-tile>
+                            <div class="controles-container">
+                                             
+                                    <mat-form-field>
+                                            <input formControlName="tipo" matInput placeholder="Tipo da Prova">
+                                    </mat-form-field>         
+                                    <mat-form-field>
+                                            <input formControlName="ano_da_prova" matInput placeholder="Ano da Prova">
+                                    </mat-form-field>         
+                                    <mat-form-field>
+                                            <input formControlName="gabarito" matInput placeholder="Gabarito">
+                                    </mat-form-field>     
+                                    <p>Resposta </p>
+                                    <mat-radio-group formControlName="gender">
+                                        <mat-radio-button value="1">A</mat-radio-button>
+                                        <mat-radio-button value="2">B</mat-radio-button>
+                                        <mat-radio-button value="3">C</mat-radio-button>
+                                        <mat-radio-button value="4">D</mat-radio-button>
+                                        <mat-radio-button value="5">E</mat-radio-button>
+                                    </mat-radio-group>                                      
+                                 
+                                 <div class="button-row">
+                                         <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Cadastrar</button>
+                                     </div>
+                             </div>
+                         </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+</mat-grid-list>
+    
