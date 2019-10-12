@@ -6,7 +6,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AdministradorService {
 
-  constructor() { }
+  constructor() { 
+  }
 
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
@@ -16,7 +17,7 @@ export class AdministradorService {
     celular: new FormControl('', [Validators.required, Validators.minLength(12)]),
     telefone: new FormControl('', Validators.minLength(11)),
     cidade: new FormControl(''),
-    estado: new FormControl('', [Validators.minLength(2), Validators.maxLength(2)]),
+    estado: new FormControl(''),
     bairro: new FormControl(''),
     logradouro: new FormControl(''),
     complemento: new FormControl(''),
@@ -29,10 +30,6 @@ export class AdministradorService {
     //Funcionario
     data_admissao: new FormControl(''),
     titulacao: new FormControl(''),
-
-    //Pro Reitor
-    inicio_designacao: new FormControl(''),
-    fim_designacao: new FormControl(''),
     
   });
   initializeFormGroup() {
@@ -44,8 +41,8 @@ export class AdministradorService {
       city: '',
       gender: '1',
       department: 0,
-      hireDate: '',
-      isPermanent: false
+      data_nascimento: '',
     });
   }
+ 
 }

@@ -16,7 +16,7 @@ export class ProreitorService {
     celular: new FormControl('', [Validators.required, Validators.minLength(12)]),
     telefone: new FormControl('', Validators.minLength(11)),
     cidade: new FormControl(''),
-    estado: new FormControl('', [Validators.minLength(2), Validators.maxLength(2)]),
+    estado: new FormControl(''),
     bairro: new FormControl(''),
     logradouro: new FormControl(''),
     complemento: new FormControl(''),
@@ -33,13 +33,7 @@ export class ProreitorService {
     //Pro Reitor
     inicio_designacao: new FormControl(''),
     fim_designacao: new FormControl(''),
-    //Professor
-    departamento_id: new FormControl(''),
     
-    //Aluno
-    matricula: new FormControl(''),
-    curso: new FormControl(''),
-
   });
   initializeFormGroup() {
     this.form.setValue({
