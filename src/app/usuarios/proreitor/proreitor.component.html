@@ -1,0 +1,122 @@
+<form [formGroup]="service.form" class="normal-form">
+        <mat-grid-list cols="2" rowHeight="800px">
+    
+            <mat-grid-tile>
+                <div class="controles-container">
+    
+                    <input type="hidden" formControlName="$key">
+                    <mat-form-field>
+                        <input formControlName="nome" matInput placeholder="Nome*">
+                        <mat-error>Esse campo é obrigatório</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="sobrenome" matInput placeholder="Sobrenome*">
+                        <mat-error>Esse campo é obrigatório</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="celular" matInput placeholder="Celular*">
+                        <mat-error *ngIf="service.form.controls['telefone'].errors?.required">Esse é um campo obrigatório
+                        </mat-error>
+                        <mat-error *ngIf="service.form.controls['telefone'].errors?.minLength">Lembre-se do DD começando com
+                            0</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="telefone" matInput placeholder="Telefone*">
+                        <mat-error *ngIf="service.form.controls['telefone'].errors?.minLength">Lembre-se do DD começando com
+                            0</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="data_nascimento" matInput [matDatepicker]="picker"
+                            placeholder="Data de nascimento">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <div class="add-bottom-padding">
+                        <p>Gênero: </p>
+                        <mat-radio-group formControlName="gender">
+                            <mat-radio-button value="1">Masculino</mat-radio-button>
+                            <mat-radio-button value="2">Feminino</mat-radio-button>
+                            <mat-radio-button value="3">Outro</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <mat-form-field>
+                        <input formControlName="email" matInput placeholder="Email">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="senha" matInput placeholder="Senha">
+                    </mat-form-field>
+    
+    
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="controles-container">
+    
+                    <mat-form-field>
+                        <input formControlName="cidade" matInput placeholder="Cidade">
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-select formControlName="estado" placeholder="Estado">
+                            <ng-container *ngFor="let estado of estados">
+                                <mat-option value="{{estado.id}}">{{estado.value}}</mat-option>
+                            </ng-container>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="bairro" matInput placeholder="Bairro">
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <input formControlName="logradouro" matInput placeholder="Logradouro">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="complemento" matInput placeholder="Complemento">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input formControlName="numero" matInput placeholder="Numero">
+                    </mat-form-field>
+    
+                    <div>
+    
+                            <mat-form-field>
+                                    <input formControlName="titulacao" matInput placeholder="Titulação">
+                                </mat-form-field>
+            
+                                <mat-form-field>
+                                    <input formControlName="data_admissao" matInput [matDatepicker]="picker1"
+                                        placeholder="Data de designação">
+                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </mat-form-field>
+
+                                <mat-form-field>
+                                        <input formControlName="inicio_designacao" matInput [matDatepicker]="picker2"
+                                            placeholder="Data de designação">
+                                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker2></mat-datepicker>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field>
+                                        <input formControlName="fim_designacao" matInput [matDatepicker]="picker3"
+                                            placeholder="Fim da designação">
+                                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker3></mat-datepicker>
+                                    </mat-form-field>
+                
+                            
+                </div>
+                
+                    <div class="button-row">
+                        <button mat-raised-button color="primary" type="submit"
+                            [disabled]="service.form.invalid">Cadastrar</button>
+                        <button mat-raised-button color="warn" (click)="onClear()">Limpar</button>
+                    </div>
+                </div>
+            </mat-grid-tile>
+    
+        </mat-grid-list>
+    
+    </form>
+    
+    

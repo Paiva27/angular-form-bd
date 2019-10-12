@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class ProreitorService {
 
   constructor() { }
 

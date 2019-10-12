@@ -18,6 +18,10 @@ import { AreaComponent } from './usuarios/area/area.component';
 import { CursoComponent } from './usuarios/curso/curso.component';
 import { DepartamentoComponent } from './usuarios/departamento/departamento.component';
 import { QuestaoComponent } from './usuarios/questao/questao.component';
+import { AdministradorComponent } from './usuarios/admnistrador/admnistrador.component';
+import { AlunoComponent } from './usuarios/aluno/aluno.component';
+import { ProfessorComponent } from './usuarios/professor/professor.component';
+import { ProreitorComponent } from './usuarios/proreitor/proreitor.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { QuestaoComponent } from './usuarios/questao/questao.component';
     CursoComponent,
     DepartamentoComponent,
     QuestaoComponent,
+    AdministradorComponent,
+    AlunoComponent,
+    ProfessorComponent,
+    ProreitorComponent,
   ],
   imports: [
     BrowserModule,

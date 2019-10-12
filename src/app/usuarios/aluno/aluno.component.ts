@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../shared/usuario.service';
-import { element } from 'protractor';
-
+import { AlunoService } from '../../shared/aluno.service';
 @Component({
-  selector: 'app-usuario',
-  templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css']
+  selector: 'app-aluno',
+  templateUrl: './aluno.component.html',
+  styleUrls: ['./aluno.component.css']
 })
-export class UsuarioComponent implements OnInit {
+export class AlunoComponent implements OnInit {
 
-  constructor(private service: UsuarioService) { }
+  constructor(private service: AlunoService) { }
 
   ocupacoes = [
     { id: 1, value: 'Aluno' },
@@ -38,22 +36,8 @@ export class UsuarioComponent implements OnInit {
     { id: 25, value: 'SE' }, { id: 26, value: 'TO' },
 
   ]
+  
   ngOnInit() {
   }
-  onClear() {
-    this.service.form.reset();
-    this.service.initializeFormGroup();
-    
-  }
 
-  onChange(deviceValue) {
-    if(deviceValue==1){
-      document.getElementById('aluno').style.display = "block";
-    }else if(deviceValue==2){
-
-    }else if(deviceValue==3){
-
-    }
-    console.log(deviceValue);
-}
 }

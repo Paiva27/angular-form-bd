@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../shared/usuario.service';
+import { ProfessorService } from '../../shared/professor.service';
 import { element } from 'protractor';
 
 @Component({
-  selector: 'app-usuario',
-  templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css']
+  selector: 'app-professor',
+  templateUrl: './professor.component.html',
+  styleUrls: ['./professor.component.css']
 })
-export class UsuarioComponent implements OnInit {
 
-  constructor(private service: UsuarioService) { }
+export class ProfessorComponent implements OnInit {
+
+  constructor(private service: ProfessorService) { }
 
   ocupacoes = [
     { id: 1, value: 'Aluno' },
@@ -46,14 +47,4 @@ export class UsuarioComponent implements OnInit {
     
   }
 
-  onChange(deviceValue) {
-    if(deviceValue==1){
-      document.getElementById('aluno').style.display = "block";
-    }else if(deviceValue==2){
-
-    }else if(deviceValue==3){
-
-    }
-    console.log(deviceValue);
-}
 }

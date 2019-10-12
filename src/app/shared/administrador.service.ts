@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class AdministradorService {
 
   constructor() { }
 
@@ -33,13 +33,7 @@ export class UsuarioService {
     //Pro Reitor
     inicio_designacao: new FormControl(''),
     fim_designacao: new FormControl(''),
-    //Professor
-    departamento_id: new FormControl(''),
     
-    //Aluno
-    matricula: new FormControl(''),
-    curso: new FormControl(''),
-
   });
   initializeFormGroup() {
     this.form.setValue({

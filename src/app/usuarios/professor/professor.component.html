@@ -78,59 +78,30 @@
                 </mat-form-field>
 
 
-                <mat-form-field>
-                    <mat-select formControlName="department" placeholder="Tipo de Usuário" [(ngModel)]="selected">
-                        <ng-container *ngFor="let ocupacao of ocupacoes")>
-                            <mat-option value="{{ocupacao.id}}">{{ocupacao.value}}</mat-option>
-                        </ng-container>
-                    </mat-select>
-                </mat-form-field>
 
-                
+                <div>
 
-                <div *ngIf="selected == 3 || selected == 2 ">
-
-                        <mat-form-field>
-                                <input formControlName="titulacao" matInput placeholder="Titulação">
-                            </mat-form-field>
-                             
-                            <mat-form-field>
-                                    <mat-select formControlName="curse" placeholder="Curso">
-                                        <ng-container *ngFor="let curso of cursos">
-                                            <mat-option value="{{curso.id}}">{{curso.value}}</mat-option>
-                                        </ng-container>
-                                    </mat-select>
-                                </mat-form-field>
-            
-                        
-            </div>
-            <div *ngIf="selected == 2">
-        
                     <mat-form-field>
-                            <mat-select formControlName="departamento_id" placeholder="Departamento">
-                                <ng-container *ngFor="let departamento of departamentos">
-                                    <mat-option value="{{departamento.id}}">{{departamento.value}}</mat-option>
-                                </ng-container>
-                            </mat-select>
-                        </mat-form-field>
-        
-            </div>
-            <div *ngIf="selected == 3">
-        
+                        <input formControlName="titulacao" matInput placeholder="Titulação">
+                    </mat-form-field>
+
                     <mat-form-field>
-                        <input formControlName="inicio_designacao" matInput [matDatepicker]="picker2"
+                        <input formControlName="data_admissao" matInput [matDatepicker]="picker2"
                             placeholder="Data de designação">
                         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                         <mat-datepicker #picker2></mat-datepicker>
                     </mat-form-field>
-        
                     <mat-form-field>
-                        <input formControlName="fim_designacao" matInput [matDatepicker]="picker3"
-                            placeholder="Fim da designação">
-                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-                        <mat-datepicker #picker3></mat-datepicker>
+                        <mat-select formControlName="departamento_id" placeholder="Departamento">
+                            <ng-container *ngFor="let departamento of departamentos">
+                                <mat-option value="{{departamento.id}}">{{departamento.value}}</mat-option>
+                            </ng-container>
+                        </mat-select>
                     </mat-form-field>
-            </div>
+
+
+                </div>
+
                 <div class="button-row">
                     <button mat-raised-button color="primary" type="submit"
                         [disabled]="service.form.invalid">Cadastrar</button>
@@ -142,4 +113,3 @@
     </mat-grid-list>
 
 </form>
-
