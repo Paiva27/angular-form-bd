@@ -78,8 +78,8 @@
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-select formControlName="department" placeholder="Tipo de Usuário">
-                        <ng-container *ngFor="let ocupacao of ocupacoes">
+                    <mat-select formControlName="department" placeholder="Tipo de Usuário" [(ngModel)]="selected">
+                        <ng-container *ngFor="let ocupacao of ocupacoes")>
                             <mat-option value="{{ocupacao.id}}">{{ocupacao.value}}</mat-option>
                         </ng-container>
                     </mat-select>
@@ -93,4 +93,47 @@
         </mat-grid-tile>
 
     </mat-grid-list>
+<div *ngIf="selected == 1" >
+    <mat-grid-list cols="3" rowHeight="300px">
+        <mat-grid-tile>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            
+            <p>Colocar aqui o que aluno tem</p>
+        
+        </mat-grid-tile>
+        <mat-grid-tile>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</div>
+<div *ngIf="selected == 2">
+    <mat-grid-list cols="3" rowHeight="300px">
+        <mat-grid-tile>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            
+            <p>Colocar aqui os campos de professor</p>
+        </mat-grid-tile>
+        <mat-grid-tile>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</div>
+<div *ngIf="selected == 3">
+    <mat-grid-list cols="3" rowHeight="300px">
+        <mat-grid-tile>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            
+            <p>Colocar aqui os campos de Pro-reitor</p>
+            
+        </mat-grid-tile>
+        <mat-grid-tile>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</div>
+
 </form>
+

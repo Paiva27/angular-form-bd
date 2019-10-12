@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../shared/usuario.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-usuario',
@@ -30,6 +31,17 @@ export class UsuarioComponent implements OnInit {
   onClear() {
     this.service.form.reset();
     this.service.initializeFormGroup();
+    
   }
 
+  onChange(deviceValue) {
+    if(deviceValue==1){
+      document.getElementById('aluno').style.display = "block";
+    }else if(deviceValue==2){
+
+    }else if(deviceValue==3){
+
+    }
+    console.log(deviceValue);
+}
 }

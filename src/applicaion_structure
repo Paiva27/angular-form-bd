@@ -2,10 +2,21 @@
 +---● app
 |   +--● usuarios
 |   |  |--usuarios.component.ts|.html|.css
+|   |  +--● area
+|   |  |  |--area.component.ts|.html|.css
+|   |  +--● curso
+|   |  |  |--curso.component.ts|.html|.css
+|   |  +--● departamento
+|   |  |  |--departamento.component.ts|.html|.css
+|   |  +--● questao
+|   |  |  |--questao.component.ts|.html|.css
 |   |  +--● usuario
 |   |  |  |--usuario.component.ts|.html|.css
 |   |  |
 |   |  +--● shared
+|   |     |--area.service.ts (form group)
+|   |     |--curso.service.ts (form group)
+|   |     |--departamento.service.ts (form group)
+|   |     |--questao.service.ts (form group)
 |   |     |--usuario.service.ts (form group)
-|   |
 |   |--app.module.ts
